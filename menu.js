@@ -1,3 +1,4 @@
-window.onload = function() {
-    document.getElementById("tah_audio").play();
-}
+window.onload = function () {
+    var audio = new Audio('');
+    audio.play();
+  }
