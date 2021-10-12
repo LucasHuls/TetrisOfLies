@@ -255,7 +255,7 @@ function draw_tetrisScore(game, isPaused) {
   if (isPaused)
     scoreElem.innerHTML += '<p>PAUSED</p>'
   if (game.get_game_over())
-    scoreElem.innerHTML += '<p style="padding-left:600px; padding-top:-500px">Alweer een teleurstelling. Probeer het nogmaals</p> <img style="padding-left:600px; padding-top:-500px" src="https://i.chzbgr.com/full/6162212352/h20E7396D/robocop-says-game-over">'
+    scoreElem.innerHTML += '<p style="padding-left:600px; padding-top:-500px">Alweer een teleurstelling. Probeer het nog een keer!</p> <img style="padding-left:600px; padding-top:-500px" src="https://i.chzbgr.com/full/6162212352/h20E7396D/robocop-says-game-over">'
   return scoreElem;
 }
 
