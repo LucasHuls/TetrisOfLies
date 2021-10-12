@@ -127,12 +127,10 @@ TetrisGame.prototype.tick = function () {
   if (this.gameOver)
     return false;
   if (intersects(this.rows, this.currentPiece, this.pieceY + 1, this.pieceX)) {
-    /* burn current piece into board */
     this.rows = apply_piece(this.rows, this.currentPiece, this.pieceY, this.pieceX);
     var r = kill_rows(this.rows);
     this.rows = r.rows;
     this.score += 1 + r.numRowsKilled * r.numRowsKilled * NUM_COLS;
-    /* fetch next piece */
     if (intersects(this.rows, this.nextPiece, 0, NUM_COLS / 2 - 2)) {
       this.gameOver = true;
     } else {
@@ -308,15 +306,15 @@ function tetris_run(containerElem) {
         } else if (kev.keyCode === KEY_R) {
           game = new TetrisGame();
         } else if (kev.keyCode === KEY_LEFT) {
-          game.steerLeft();
-        } else if (kev.keyCode === KEY_RIGHT) {
           game.steerRight();
+        } else if (kev.keyCode === KEY_RIGHT) {
+          game.steerLeft();
         } else if (kev.keyCode === KEY_DOWN) {
           game.steerDown();
         } else if (kev.keyCode === KEY_A) {
-          game.rotateLeft();
-        } else if (kev.keyCode === KEY_D) {
           game.rotateRight();
+        } else if (kev.keyCode === KEY_D) {
+          game.rotateLeft();
         } else if (kev.keyCode === KEY_SPACE) {
           game.letFall();
         } else {
