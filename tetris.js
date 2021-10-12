@@ -257,7 +257,7 @@ function draw_tetrisScore(game, isPaused) {
   if (isPaused)
     scoreElem.innerHTML += '<p>PAUSED</p>'
   if (game.get_game_over())
-    scoreElem.innerHTML += '<p>GAME OVER</p>'
+    scoreElem.innerHTML += '<p style="padding-left:600px; padding-top:-500px">Alweer een teleurstelling. Probeer het nogmaals</p> <img style="padding-left:600px; padding-top:-500px" src="https://i.chzbgr.com/full/6162212352/h20E7396D/robocop-says-game-over">'
   return scoreElem;
 }
 
@@ -274,13 +274,7 @@ function draw_tetrisUsage(game) {
   var usageElem = document.createElement('div');
   usageElem.classList.add('tetrisUsage');
   usageElem.innerHTML =
-       "<table>" +
-      "<tr><th>Cursor Keys</th><td>Steer</td></tr>" +
-      "<tr><th>a/d</th><td>Rotate</td></tr>" +
-      "<tr><th>Space bar</th><td>Let fall</td></tr>" +
-      "<tr><th>Enter</th><td>Toggle pause</td></tr>" +
-      "<tr><th>r</th><td>Restart game</td></tr>" +
-      "</table>";
+      "<h1>Tetris Of Lies!</h1>";
   return usageElem;
 }
 
@@ -344,6 +338,7 @@ function tetris_run(containerElem) {
   }
 
   function pause() {
+    playmusic();
     function keyHandler(kev) {
       if (kev.keyCode == KEY_ENTER) {
         containerElem.removeEventListener('keydown', keyHandler);
@@ -355,4 +350,9 @@ function tetris_run(containerElem) {
 
     redraw(game, true, containerElem);
   }
+}
+
+function playmusic() {
+  var audio = new Audio('https://www.dropbox.com/s/bp49zvq2fkurnmm/music.mp3?dl=1');
+  audio.play();
 }

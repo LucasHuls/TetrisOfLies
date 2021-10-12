@@ -1,10 +1,9 @@
 div.tetrisGame {
   position: relative;
-  margin: 0;
-  padding: 0;
   border: none;
   width: 600px;
   height: 600px;
+  margin-right: 300px;
 }
 
 div.tetrisGame div.tetrisLeftPane {
@@ -17,7 +16,7 @@ div.tetrisGame div.tetrisLeftPane {
 div.tetrisLeftPane div.tetrisScore {
   position: absolute;
   top: 150px;
-  left: 0;
+  left: 100;
   font-size: 20pt;
 }
 
